@@ -6,9 +6,24 @@
     font-family: 'pixel';
     src: url('../fonts/Pixel.ttf');
 }
+html {
+    height: 100%;
+}
+body {
+    margin: 0;
+    background-color: #0D262e;
+    color: #fff;
+    height: 100%;
+}
 h1{
     font-family: Pixel;
     font-size: 60px;
+}
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100%;
 }
 
 [wm-flappy]{
@@ -24,7 +39,6 @@ h1{
     position: absolute;
     width: 60px;
     left: calc(50% - 30px);
-    bottom: 50%;
 }
 .par-de-barreiras{
     position: absolute;
@@ -58,4 +72,5 @@ h1{
     right: 10px;
     font-family: Pixel;
     font-size: 70px;
+    z-index: 100;
 }
