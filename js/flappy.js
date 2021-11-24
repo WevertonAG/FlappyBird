@@ -145,6 +145,7 @@ function FlappyBird() {
 
             if (colidiu(passaro, barreiras)) {
                 clearInterval(temporizador)
+                document.location.reload(true)
             }
         }, 20)
     }
