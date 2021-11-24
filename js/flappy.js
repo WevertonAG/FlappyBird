@@ -77,3 +77,4 @@ barreiras.pares.forEach(par => areaDoJogo.appendChild(par.elemento))
 setInterval(() => {
     barreiras.animar()
 }, 20)
+//...
