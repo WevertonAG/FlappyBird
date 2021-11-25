@@ -49,8 +49,21 @@ h1{
     left: calc(50% - 190px);
     font-size: 60px;
 }
-.start{
+a{
+    position: relative;
+    display: flex;
+    align-items: center;
     text-decoration: none;
+    font-family: Pixel;
+    font-size: 30px;
+    color: #eee;
+}
+.insta{
+    position: relative;
+    display: flex;
+    height: 30px;
+    margin: 10px;
+    align-items: center;
 }
 [wm-flappy]{
     position: relative;

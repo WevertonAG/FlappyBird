@@ -132,7 +132,7 @@ function botaoRestart(){
         this.elemento.innerHTML = e
     }
 }
-
+ 
 function FlappyBird() {
     let pontos = 0
 
