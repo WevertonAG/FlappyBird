@@ -46,7 +46,7 @@ function Barreiras(altura, largura, abertura, espaco, notificarPonto) {
         new ParDeBarreiras(altura, abertura, largura + espaco * 2),
         new ParDeBarreiras(altura, abertura, largura + espaco * 3)
     ]
-    const deslocamento = 2
+    const deslocamento = 4
     this.animar = () => {
         this.pares.forEach(par => {
             par.setX(par.getX() - deslocamento)
@@ -121,6 +121,17 @@ function colidiu(passaro, barreiras) {
     return colidiu
 
 }
+function botaoRestart(){
+    this.elemento = novoElemento('button', 'restart')
+    const texto = document.createTextNode('Restart')
+    this.elemento.appendChild(texto)
+    this.elemento.onclick = e =>{
+        document.location.reload(true)
+    }
+    this.aparece = e =>{
+        this.elemento.innerHTML = e
+    }
+}
 
 function FlappyBird() {
     let pontos = 0
@@ -133,9 +144,11 @@ function FlappyBird() {
     const barreiras = new Barreiras(altura, largura, 200, 400,
         () => progresso.atualizarPontos(++pontos))
     const passaro = new Passaro(altura)
+    const botao = new botaoRestart()
 
     areaDoJogo.appendChild(progresso.elemento)
     areaDoJogo.appendChild(passaro.elemento)
+    
     barreiras.pares.forEach(par => areaDoJogo.appendChild(par.elemento))
 
     this.start = () => {
@@ -145,7 +158,7 @@ function FlappyBird() {
 
             if (colidiu(passaro, barreiras)) {
                 clearInterval(temporizador)
-                document.location.reload(true)
+                areaDoJogo.appendChild(botao.elemento)
             }
         }, 20)
     }
